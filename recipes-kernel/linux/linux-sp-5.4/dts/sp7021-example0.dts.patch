@@ -1,0 +1,47 @@
+--- /dev/null	2023-02-09 22:06:47.549908471 +0300
++++ a/arch/arm/boot/dts/sp7021-example0.dts	2023-02-21 17:43:45.698081294 +0300
+@@ -0,0 +1,44 @@
++/*
++ * Linux sp7021 Example0 board
++ * Copyright (C) 2023 ECorp - http://evil.corp/device/
++ * License: GPLv2 or later
++ */
++/dts-v1/;
++
++#include "sp7021-ltpp3g2revD.dtsi"
++
++/ {
++ model = "SP7021 ECorp SPI test";
++ clocks {
++
++ };
++};
++
++// 26 (SPI) on s1
++&spi_controller0 {  status = "okay";
++  pinctrl-names = "default";
++  pinctrl-0 = <&pins_spim0>;
++  spidev@0 {
++    compatible = "spidev";
++    reg = <0>;
++    spi-max-frequency = <50000000>;
++  };
++};
++
++&pctl {
++// 26 (SPI) on s1
++ pins_spim0: pins_spim0 {
++ sppctl,pins = <
++      SPPCTL_IOPAD(8,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_EN,0)
++      SPPCTL_IOPAD(9,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_CLK,0)
++      SPPCTL_IOPAD(10,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_DO,0)
++      SPPCTL_IOPAD(11,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_DI,0)
++    >;
++ };
++};
++
++/ {
++    soc@B {
++
++    };
++};
