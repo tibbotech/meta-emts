@@ -23,7 +23,7 @@ IMAGE_INSTALL += "tps-resetconf"
 #IMAGE_INSTALL += "wireguard-tools"
 
 IMAGE_INSTALL += "tps-dts"
-IMAGE_INSTALL += "route2"
+IMAGE_INSTALL += "iproute2"
 
 # temporary there
 IMAGE_INSTALL += "devmem2 ethtool mtd-utils mmc-utils"
