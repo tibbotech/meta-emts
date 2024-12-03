@@ -23,7 +23,7 @@ Layer contains private apps, DTSes and image definition for sp7021-based board.
 
 ## Quick Start
 
-### Tibbo Layers Setup
+### Tibbo Layers Setup (if building NOT with Docker)
 ```
 curl https://raw.githubusercontent.com/tibbotech/repo-manifests/master/clone.sh > ./clone.sh && chmod 0755 ./clone.sh && ./clone.sh
 repo3 sync
@@ -31,19 +31,34 @@ TEMPLATECONF=`pwd`/layers/meta-tibbo/conf/templates/tppg2 . layers/openembedded-
 install -m 0644 ../layers/meta-tibbo/conf/templates/site.conf conf/
 ```
 ### + This Layer
+Privately:
 ```
 git clone git@github.com:tibbotech/meta-emts.git ../layers/meta-emts
+```
+or with public clone command:
+```
+git clone https://github.com/tibbotech/meta-emts.git ../layers/meta-emts
+
+```
+
+and:
+```
 MACHINE=tppg2 bitbake-layers add-layer ../layers/meta-emts
 ```
 
-### Append to your local.conf
+### Append to your local.conf (only if building for LTPPg2)
 ```
-ISP_VAR_DTB = "sp7021-emts.dtb"
+ISP_VAR_DTB = "sp7021-emts-tppg2.dtb"
 ```
 
 ### Building
+For LTPPg2:
 ```
 MACHINE=tppg2 bitbake mc:tppg2:img-emts
+```
+For EMTS board:
+```
+MACHINE=tppg2-emts bitbake mc:tppg2-emts:img-emts
 ```
 ISPBOOOT.BIN will be placed at BUILDDIR/deploy/images/tppg2/emmc0/
 
