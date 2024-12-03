@@ -2,9 +2,9 @@ DESCRIPTION = "EMTS image"
 
 LICENSE = "MIT"
 
-require inc-p-123.inc
-require inc-rootfs.inc
-require inc-tps-gen.inc
+require recipes-core/images/inc-p-123.inc
+require recipes-core/images/inc-rootfs.inc
+require recipes-core/images/inc-tps-gen.inc
 
 IMAGE_FEATURES = ""
 
