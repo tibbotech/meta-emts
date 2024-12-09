@@ -11,16 +11,16 @@
 +#include "sp7021-ltpp3g2revD.dtsi"
 +
 +/ {
-+ model = "SP7021 LTPP EMTS v0.0";
++ model = "SP7021 LTPP EMTS v0.1";
 + clocks {
 +  clk_can0: clk_can0 {
 +    compatible = "fixed-clock";
 +    #clock-cells = <0>;
-+    clock-frequency  = <40000000>;  };
++    clock-frequency  = <10000000>;  }; // max is 40MZ
 +  clk_can1: clk_can1 {
 +    compatible = "fixed-clock";
 +    #clock-cells = <0>;
-+    clock-frequency  = <40000000>;  };
++    clock-frequency  = <10000000>;  }; // max is 40MZ
 +
 + };
 +};
