@@ -19,7 +19,7 @@ IMAGE_INSTALL += "tcf-agent"
 
 IMAGE_INSTALL += "tzdata-asia"
 
-IMAGE_INSTALL += "tps-resetconf"
+#IMAGE_INSTALL += "tps-resetconf"
 #IMAGE_INSTALL += "wireguard-tools"
 
 IMAGE_INSTALL += "tps-dts"
