@@ -1,0 +1,126 @@
+--- /dev/null	2024-12-02 15:31:20.990681527 +0300
++++ a/arch/arm/boot/dts/sp7021-emts-tppg2.dts	2024-12-03 00:41:26.864013678 +0300
+@@ -0,0 +1,123 @@
++/*
++ * EMTS for LTPP
++ * Copyright (C) 2024 Tibbo Tech. - http://tibbo.com/tps/
++ * License: GPLv2 or later
++ */
++/dts-v1/;
++
++#include "sp7021-ltpp3g2revD.dtsi"
++
++/ {
++ model = "SP7021 LTPP EMTS v0.1";
++ clocks {
++  clk_can0: clk_can0 {
++    compatible = "fixed-clock";
++    #clock-cells = <0>;
++    clock-frequency  = <10000000>;  }; // max is 40MZ
++  clk_can1: clk_can1 {
++    compatible = "fixed-clock";
++    #clock-cells = <0>;
++    clock-frequency  = <10000000>;  }; // max is 40MZ
++
++ };
++};
++
++&pctl {  interrupts = <>;  };
++
++/* 55 (SPI) on s1 */
++&spi_controller0 {  status = "okay";
++  pinctrl-names = "default";
++  pinctrl-0 = <&pins_spim0>;
++  tps-sock = "s1";
++};
++
++&spi_controller0 {
++  can0: can@0 {
++    pinctrl-names = "default";
++    pinctrl-0 = <&pins_spidev0>;
++    compatible = "microchip,mcp2518fd";
++    reg = <0>;
++    clocks = <&clk_can0>;
++    spi-max-frequency = <50000000>;
++    interrupt-parent = <&intc>;
++    interrupts = <120 IRQ_TYPE_LEVEL_LOW>;
++    microchip,rx-int-gpios = <&pctl 13 GPIO_ACTIVE_LOW>;
++    // dv_iocon = <0x80000000>; // use default
++    dv_iocon = <0x20030300>; // SoF
++    // dv_oscva = <0x60>; // osc div
++    dv_oscva = <0x80000000>; // default
++    // dv_nober; // err counter off
++    // dv_noslp; // do not sleep
++  };
++};
++/* 55 (SPI) on s5 */
++&spi_controller1 {  status = "okay";
++  pinctrl-names = "default";
++  pinctrl-0 = <&pins_spim1>;
++  tps-sock = "s5";
++};
++
++&spi_controller1 {
++  can1: can@1 {
++    pinctrl-names = "default";
++    pinctrl-0 = <&pins_spidev1>;
++    compatible = "microchip,mcp2518fd";
++    reg = <0>;
++    clocks = <&clk_can1>;
++    spi-max-frequency = <50000000>;
++    interrupt-parent = <&intc>;
++    interrupts = <121 IRQ_TYPE_LEVEL_LOW>;
++    microchip,rx-int-gpios = <&pctl 21 GPIO_ACTIVE_LOW>;
++    // dv_iocon = <0x80000000>; // use default
++    dv_iocon = <0x20030300>; // SoF
++    // dv_oscva = <0x60>; // osc div
++    dv_oscva = <0x80000000>; // default
++    // dv_nober; // err counter off
++    // dv_noslp; // do not sleep
++  };
++};
++
++
++&pctl {
++/* 55 (SPI) on s1 */
++ pins_spim0: pins_spim0 {
++ sppctl,pins = <
++      SPPCTL_IOPAD(26,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_EN,0)
++      SPPCTL_IOPAD(25,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_DI,0)
++      SPPCTL_IOPAD(23,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_DO,0)
++      SPPCTL_IOPAD(27,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_CLK,0)
++    >;
++ };
++ pins_spidev0: pins_spidev0 {
++ sppctl,pins = <
++      SPPCTL_IOPAD(12,SPPCTL_PCTL_G_GPIO,0,0)
++      SPPCTL_IOPAD(13,SPPCTL_PCTL_G_GPIO,0,0)
++      SPPCTL_IOPAD(19,SPPCTL_PCTL_G_GPIO,0,0)
++      SPPCTL_IOPAD(22,SPPCTL_PCTL_G_PMUX,MUXF_GPIO_INT0,0)
++    >;
++ };
++/* 55 (SPI) on s5 */
++ pins_spim1: pins_spim1 {
++ sppctl,pins = <
++      SPPCTL_IOPAD(16,SPPCTL_PCTL_G_PMUX,MUXF_SPIM1_EN,0)
++      SPPCTL_IOPAD(18,SPPCTL_PCTL_G_PMUX,MUXF_SPIM1_DI,0)
++      SPPCTL_IOPAD(17,SPPCTL_PCTL_G_PMUX,MUXF_SPIM1_DO,0)
++      SPPCTL_IOPAD(15,SPPCTL_PCTL_G_PMUX,MUXF_SPIM1_CLK,0)
++    >;
++ };
++ pins_spidev1: pins_spidev1 {
++ sppctl,pins = <
++      SPPCTL_IOPAD(20,SPPCTL_PCTL_G_GPIO,0,0)
++      SPPCTL_IOPAD(21,SPPCTL_PCTL_G_GPIO,0,0)
++      SPPCTL_IOPAD(22,SPPCTL_PCTL_G_GPIO,0,0)
++      SPPCTL_IOPAD(14,SPPCTL_PCTL_G_PMUX,MUXF_GPIO_INT1,0)
++    >;
++ };
++
++};
++
++/ {
++    soc@B {
++
++    };
++};
