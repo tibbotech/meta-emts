@@ -16,11 +16,11 @@
 +  clk_can0: clk_can0 {
 +    compatible = "fixed-clock";
 +    #clock-cells = <0>;
-+    clock-frequency  = <10000000>;  }; // max is 40MZ
++    clock-frequency  = <20000000>;  }; // max is 40MZ
 +  clk_can1: clk_can1 {
 +    compatible = "fixed-clock";
 +    #clock-cells = <0>;
-+    clock-frequency  = <10000000>;  }; // max is 40MZ
++    clock-frequency  = <20000000>;  }; // max is 40MZ
 +
 + };
 +};
@@ -48,7 +48,7 @@
 +    compatible = "microchip,mcp2518fd";
 +    reg = <0>;
 +    clocks = <&clk_can0>;
-+    spi-max-frequency = <50000000>;
++    spi-max-frequency = <20000000>;
 +    interrupt-parent = <&intc>;
 +    interrupts = <120 IRQ_TYPE_LEVEL_LOW>;
 +    microchip,rx-int-gpios = <&pctl 13 GPIO_ACTIVE_LOW>;
@@ -74,7 +74,7 @@
 +    compatible = "microchip,mcp2518fd";
 +    reg = <0>;
 +    clocks = <&clk_can1>;
-+    spi-max-frequency = <50000000>;
++    spi-max-frequency = <20000000>;
 +    interrupt-parent = <&intc>;
 +    interrupts = <121 IRQ_TYPE_LEVEL_LOW>;
 +    microchip,rx-int-gpios = <&pctl 21 GPIO_ACTIVE_LOW>;
