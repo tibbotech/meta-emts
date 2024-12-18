@@ -51,6 +51,11 @@ MACHINE=tppg2 bitbake-layers add-layer ../layers/meta-emts
 ISP_VAR_DTB = "sp7021-emts-tppg2.dtb"
 ```
 
+### Append to your local.conf
+```
+PREFERRED_VERSION_linux-sp = "5.10%"
+```
+
 ### Building
 For LTPPg2:
 ```
