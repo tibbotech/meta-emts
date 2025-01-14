@@ -25,7 +25,7 @@ IMAGE_INSTALL += "tzdata-asia"
 IMAGE_INSTALL += "tps-dts"
 IMAGE_INSTALL += "iproute2"
 # for adroid-tools
-IMAGE_INSTALL += "android-tools"
+IMAGE_INSTALL += "android-tools usbutils"
 PREFERRED_PROVIDER_android-tools-conf = "android-tools-conf-configfs"
 IMAGE_INSTALL += "kernel-modules"
 
