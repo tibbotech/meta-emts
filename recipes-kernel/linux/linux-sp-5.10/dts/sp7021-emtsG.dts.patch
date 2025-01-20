@@ -1,9 +1,9 @@
 --- /dev/null	2025-01-09 22:39:58.819241639 +0300
 +++ a/arch/arm/boot/dts/sp7021-emtsG.dts	2025-01-15 01:20:17.463035366 +0300
-@@ -0,0 +1,201 @@
+@@ -0,0 +1,211 @@
 +/*
 + * EMTS for LTPP
-+ * Copyright (C) 2024 Tibbo Tech. - http://tibbo.com/tps/
++ * Copyright (C) 2025 Tibbo Tech. - http://tibbo.com/tps/
 + * License: GPLv2 or later
 + */
 +/dts-v1/;
@@ -11,7 +11,7 @@
 +#include "sp7021-ltpp3g2revD.dtsi"
 +
 +/ {
-+ model = "SP7021 EMTS v0.1";
++ model = "SP7021 EMTS v0.2";
 + clocks {
 +  clk_can0: clk_can0 {
 +    compatible = "fixed-clock";
@@ -33,27 +33,37 @@
 +
 +&l2sw {
 + pinctrl-0 = <&ethA_pins &eth0_pins>;
++ mode = <1>;
 +};
++
++/delete-node/ &eth_phy0;
++/delete-node/ &eth_phy1;
 +
 +/ {
 +    soc@B {
 +
-+gspi0: gspi0 {
-+ compatible = "spi-gpio";
-+ sck-gpios = <&pctl 11 0>;
-+ miso-gpios = <&pctl 9 0>;
-+ mosi-gpios = <&pctl 10 0>;
-+ cs-gpios = <&pctl 8 0>;
-+ num-chipselects = <1>;
-+};
-+gspi1: gspi1 {
-+ compatible = "spi-gpio";
-+ sck-gpios = <&pctl 19 0>;
-+ miso-gpios = <&pctl 17 0>;
-+ mosi-gpios = <&pctl 18 0>;
-+ cs-gpios = <&pctl 16 0>;
-+ num-chipselects = <1>;
-+};
++	mdio {
++	    eth_phy0: ethernet-phy@1 {  reg = <1>;  };
++	    eth_phy1: ethernet-phy@0 {  reg = <0>;  };
++	};
++
++	gspi0: gspi0 {
++ 		compatible = "spi-gpio";
++ 		sck-gpios = <&pctl 11 0>;
++ 		miso-gpios = <&pctl 9 0>;
++ 		mosi-gpios = <&pctl 10 0>;
++ 		cs-gpios = <&pctl 8 0>;
++ 		num-chipselects = <1>;
++	};
++	gspi1: gspi1 {
++ 		compatible = "spi-gpio";
++ 		sck-gpios = <&pctl 19 0>;
++ 		miso-gpios = <&pctl 17 0>;
++ 		mosi-gpios = <&pctl 18 0>;
++ 		cs-gpios = <&pctl 16 0>;
++ 		num-chipselects = <1>;
++	};
++
 +    };
 +};
 +

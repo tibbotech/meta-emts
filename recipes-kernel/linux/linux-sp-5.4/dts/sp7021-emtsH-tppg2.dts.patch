@@ -3,7 +3,7 @@
 @@ -0,0 +1,121 @@
 +/*
 + * EMTS for LTPP
-+ * Copyright (C) 2024 Tibbo Tech. - http://tibbo.com/tps/
++ * Copyright (C) 2025 Tibbo Tech. - http://tibbo.com/tps/
 + * License: GPLv2 or later
 + */
 +/dts-v1/;
@@ -11,7 +11,7 @@
 +#include "sp7021-ltpp3g2revD.dtsi"
 +
 +/ {
-+ model = "SP7021 LTPP EMTS v0.1";
++ model = "SP7021 LTPP EMTS v0.2";
 + clocks {
 +  clk_can0: clk_can0 {
 +    compatible = "fixed-clock";

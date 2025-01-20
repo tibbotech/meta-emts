@@ -3,7 +3,7 @@
 @@ -0,0 +1,146 @@
 +/*
 + * EMTS for LTPP
-+ * Copyright (C) 2024 Tibbo Tech. - http://tibbo.com/tps/
++ * Copyright (C) 2025 Tibbo Tech. - http://tibbo.com/tps/
 + * License: GPLv2 or later
 + */
 +/dts-v1/;
@@ -11,7 +11,7 @@
 +#include "sp7021-ltpp3g2revD.dtsi"
 +
 +/ {
-+ model = "SP7021 LTPP EMTS v0.1";
++ model = "SP7021 LTPP EMTS v0.2";
 + clocks {
 +  clk_can0: clk_can0 {
 +    compatible = "fixed-clock";
@@ -28,22 +28,22 @@
 +/ {
 +    soc@B {
 +
-+gspi0: gspi0 {
-+ compatible = "spi-gpio";
-+ sck-gpios = <&pctl 11 0>;
-+ miso-gpios = <&pctl 9 0>;
-+ mosi-gpios = <&pctl 10 0>;
-+ cs-gpios = <&pctl 8 0>;
-+ num-chipselects = <1>;
-+};
-+gspi1: gspi1 {
-+ compatible = "spi-gpio";
-+ sck-gpios = <&pctl 19 0>;
-+ miso-gpios = <&pctl 17 0>;
-+ mosi-gpios = <&pctl 18 0>;
-+ cs-gpios = <&pctl 16 0>;
-+ num-chipselects = <1>;
-+};
++	gspi0: gspi0 {
++ 		compatible = "spi-gpio";
++ 		sck-gpios = <&pctl 11 0>;
++ 		miso-gpios = <&pctl 9 0>;
++ 		mosi-gpios = <&pctl 10 0>;
++ 		cs-gpios = <&pctl 8 0>;
++ 		num-chipselects = <1>;
++	};
++	gspi1: gspi1 {
++ 		compatible = "spi-gpio";
++ 		sck-gpios = <&pctl 19 0>;
++ 		miso-gpios = <&pctl 17 0>;
++ 		mosi-gpios = <&pctl 18 0>;
++ 		cs-gpios = <&pctl 16 0>;
++ 		num-chipselects = <1>;
++	};
 +    };
 +};
 +
