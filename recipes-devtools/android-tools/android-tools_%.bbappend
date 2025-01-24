@@ -14,5 +14,7 @@ do_install:append() {
  install -m 0644 ${WORKDIR}/adbd.service ${D}${systemd_unitdir}/system/
 }
 
+FILES:${PN} += "${systemd_unitdir}/system/adbd.service"
+
 #SYSTEMD_SERVICE:${PN} += "dev-usb-ffs-adb.mount"
 SYSTEMD_SERVICE:${PN} += "adbd.service"
