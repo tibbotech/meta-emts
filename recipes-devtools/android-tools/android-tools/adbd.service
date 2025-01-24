@@ -1,0 +1,14 @@
+[Unit]
+Description=Adndroid Debug Tools Daemon
+Wants=dev-usb-ffs-adb.mount
+After=dev-usb-ffs-adb.mount
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStartPre=-/bin/mkdir -p /dev/usb-ffs/adb
+ExecStartPre=-/bin/mount -t functionfs adb /dev/usb-ffs/adb -o uid=2000,gid=2000
+ExecStart=/usr/bin/adbd
+
+[Install]
+WantedBy=basic.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Android Debug Bridge FunctionFS
+Before=adbd.service
+#Requires=gadget-init.service usbgadget-func-adb-pre.service
+
+[Mount]
+What=adb
+Where=/dev/usb-ffs/adb
+Type=functionfs
+Options=uid=2000,gid=2000
+
+[Install]
+WantedBy=basic.target
