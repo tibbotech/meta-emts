@@ -11,7 +11,7 @@
 +#include "sp7021-ltpp3g2revD.dtsi"
 +
 +/ {
-+ model = "SP7021 EMTS v0.2";
++ model = "SP7021 EMTS v0.3";
 + clocks {
 +  clk_can0: clk_can0 {
 +    compatible = "fixed-clock";
@@ -47,17 +47,17 @@
 +
 +	gspi0: gspi0 {
 + 		compatible = "spi-gpio";
-+ 		sck-gpios = <&pctl 11 0>;
-+ 		miso-gpios = <&pctl 9 0>;
-+ 		mosi-gpios = <&pctl 10 0>;
-+ 		cs-gpios = <&pctl 8 0>;
++ 		sck-gpios = <&pctl 27 0>;
++ 		miso-gpios = <&pctl 25 0>;
++ 		mosi-gpios = <&pctl 23 0>;
++ 		cs-gpios = <&pctl 26 0>;
 + 		num-chipselects = <1>;
 +	};
 +	gspi1: gspi1 {
 + 		compatible = "spi-gpio";
-+ 		sck-gpios = <&pctl 19 0>;
-+ 		miso-gpios = <&pctl 17 0>;
-+ 		mosi-gpios = <&pctl 18 0>;
++ 		sck-gpios = <&pctl 15 0>;
++ 		miso-gpios = <&pctl 18 0>;
++ 		mosi-gpios = <&pctl 17 0>;
 + 		cs-gpios = <&pctl 16 0>;
 + 		num-chipselects = <1>;
 +	};
