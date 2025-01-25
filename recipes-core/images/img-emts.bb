@@ -14,8 +14,8 @@ IMAGE_FEATURES += "package-management"
 
 IMAGE_INSTALL += "rsync"
 
-IMAGE_INSTALL += "gdbserver"
-IMAGE_INSTALL += "tcf-agent"
+#IMAGE_INSTALL += "gdbserver"
+#IMAGE_INSTALL += "tcf-agent"
 
 IMAGE_INSTALL += "tzdata-asia"
 
