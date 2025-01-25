@@ -1,5 +1,7 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${BPN}:"
 
+inherit systemd
+
 CONFFILES:${PN} += " ${sysconfdir}/modules-load.d/adbd.conf"
 
 SRC_URI += "file://g_ffs.conf"

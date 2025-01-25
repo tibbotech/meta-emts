@@ -1,7 +1,8 @@
 [Unit]
 Description=Adndroid Debug Tools Daemon
-Wants=dev-usb-ffs-adb.mount
-After=dev-usb-ffs-adb.mount
+#Wants=dev-usb-ffs-adb.mount
+#After=dev-usb-ffs-adb.mount
+#ConditionPathExists=/etc/usb-debugging-enabled
 
 [Service]
 Type=simple
