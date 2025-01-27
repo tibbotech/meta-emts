@@ -25,7 +25,8 @@ Layer contains private apps, DTSes and image definition for sp7021-based board.
 
 ### Tibbo Layers Setup (if building NOT with Docker)
 ```
-curl https://raw.githubusercontent.com/tibbotech/repo-manifests/master/clone.sh > ./clone.sh && chmod 0755 ./clone.sh && ./clone.sh
+curl https://raw.githubusercontent.com/tibbotech/repo-manifests/master/clone.sh > ./clone.sh && chmod 0755 ./clone.sh
+M=emts ./clone.sh
 repo3 sync
 TEMPLATECONF=`pwd`/layers/meta-tibbo/conf/templates/tppg2 . layers/openembedded-core/oe-init-build-env ./build.tppg2
 install -m 0644 ../layers/meta-tibbo/conf/templates/site.conf conf/
