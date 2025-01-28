@@ -30,20 +30,6 @@ M=emts ./clone.sh
 repo3 sync
 TEMPLATECONF=`pwd`/layers/meta-tibbo/conf/templates/tppg2 . layers/openembedded-core/oe-init-build-env ./build.tppg2
 install -m 0644 ../layers/meta-tibbo/conf/templates/site.conf conf/
-```
-### + This Layer
-Privately:
-```
-git clone git@github.com:tibbotech/meta-emts.git ../layers/meta-emts
-```
-or with public clone command:
-```
-git clone https://github.com/tibbotech/meta-emts.git ../layers/meta-emts
-
-```
-
-and:
-```
 MACHINE=tppg2 bitbake-layers add-layer ../layers/meta-emts
 ```
 
