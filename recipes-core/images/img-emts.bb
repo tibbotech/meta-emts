@@ -24,8 +24,9 @@ IMAGE_INSTALL += "tzdata-asia"
 
 IMAGE_INSTALL += "tps-dts"
 IMAGE_INSTALL += "iproute2"
-# for adroid-tools
 IMAGE_INSTALL += "usbutils"
+IMAGE_INSTALL += "inputattach joystick-jscal joystick"
+# for adroid-tools
 #IMAGE_INSTALL += "android-tools"
 #PREFERRED_PROVIDER_android-tools-conf = "android-tools-conf-configfs"
 IMAGE_INSTALL += "android-tools-adbd"
