@@ -25,7 +25,7 @@ IMAGE_INSTALL += "tzdata-asia"
 IMAGE_INSTALL += "tps-dts"
 IMAGE_INSTALL += "iproute2"
 IMAGE_INSTALL += "usbutils"
-IMAGE_INSTALL += "inputattach joystick-jscal joystick"
+#IMAGE_INSTALL += "inputattach joystick-jscal joystick"
 # for adroid-tools
 #IMAGE_INSTALL += "android-tools"
 #PREFERRED_PROVIDER_android-tools-conf = "android-tools-conf-configfs"
@@ -34,6 +34,9 @@ IMAGE_INSTALL += "kernel-modules"
 
 # temporary there
 IMAGE_INSTALL += "devmem2 ethtool mtd-utils mmc-utils"
+IMAGE_INSTALL += "mc strace pstree lsof"
 
 # test
 TOOLCHAIN_TARGET_TASK += "kernel-devsrc"
+# test
+TOOLCHAIN_TARGET_TASK += "libusb1"
