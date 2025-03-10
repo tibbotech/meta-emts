@@ -1,0 +1,10 @@
+--- a/drivers/hid/hid-debug.c	2025-02-13 00:27:48.525693700 +0300
++++ a/drivers/hid/hid-debug.c	2025-02-13 01:35:42.149032677 +0300
+@@ -962,6 +962,7 @@
+ 	[ABS_DISTANCE] = "Distance",	[ABS_TILT_X] = "XTilt",
+ 	[ABS_TILT_Y] = "YTilt",		[ABS_TOOL_WIDTH] = "ToolWidth",
+ 	[ABS_VOLUME] = "Volume",	[ABS_MISC] = "Misc",
++	[ABS_PROFILE] = "Profile",
+ 	[ABS_MT_TOUCH_MAJOR] = "MTMajor",
+ 	[ABS_MT_TOUCH_MINOR] = "MTMinor",
+ 	[ABS_MT_WIDTH_MAJOR] = "MTMajorW",

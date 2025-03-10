@@ -1,0 +1,4 @@
+define KFEATURE_DESCRIPTION "Enable GADGET debug"
+define KFEATURE_COMPATIBILITY board
+
+kconf non-hardware debug_otg.cfg
