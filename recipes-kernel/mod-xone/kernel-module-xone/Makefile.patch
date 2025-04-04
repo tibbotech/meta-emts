@@ -1,0 +1,13 @@
+--- /dev/null	2025-03-11 11:12:06.613062135 +0300
++++ a/Makefile	2025-04-04 14:22:17.000000000 +0300
+@@ -0,0 +1,10 @@
++KERNEL_SRC ?= /lib/modules/$(shell uname -r)/build/
++
++default:
++	make -C $(KERNEL_SRC) M=$(PWD) modules
++
++modules_install:
++	make -C $(KERNEL_SRC) M=$(PWD) modules_install
++
++clean:
++	make -C $(KERNEL_SRC) M=$(PWD) clean
