@@ -84,7 +84,7 @@
 +&pctl {
 +/* 55 (SPI) on s1 */
 + pins_spim0: pins_spim0 {
-+ sppctl,pins = <
++ sunplus,pins = <
 +      SPPCTL_IOPAD(26,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_EN,0)
 +      SPPCTL_IOPAD(25,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_DI,0)
 +      SPPCTL_IOPAD(23,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_DO,0)
@@ -92,7 +92,7 @@
 +    >;
 + };
 + pins_spidev0: pins_spidev0 {
-+ sppctl,pins = <
++ sunplus,pins = <
 +      SPPCTL_IOPAD(12,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(13,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(19,SPPCTL_PCTL_G_GPIO,0,0)
@@ -101,7 +101,7 @@
 + };
 +/* 55 (SPI) on s5 */
 + pins_spim1: pins_spim1 {
-+ sppctl,pins = <
++ sunplus,pins = <
 +      SPPCTL_IOPAD(16,SPPCTL_PCTL_G_PMUX,MUXF_SPIM1_EN,0)
 +      SPPCTL_IOPAD(18,SPPCTL_PCTL_G_PMUX,MUXF_SPIM1_DI,0)
 +      SPPCTL_IOPAD(17,SPPCTL_PCTL_G_PMUX,MUXF_SPIM1_DO,0)
@@ -109,7 +109,7 @@
 +    >;
 + };
 + pins_spidev1: pins_spidev1 {
-+ sppctl,pins = <
++ sunplus,pins = <
 +      SPPCTL_IOPAD(20,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(21,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(22,SPPCTL_PCTL_G_GPIO,0,0)

@@ -1,0 +1,10 @@
+--- a/arch/arm/boot/dts/sp7021-ev.dts	2025-03-17 17:23:15.619860333 +0300
++++ a/arch/arm/boot/dts/sp7021-ev.dts	2025-03-17 22:13:43.241098368 +0300
+@@ -182,6 +182,7 @@
+ };
+ 
+ &sp_spinor0 {
++	status = "disabled";
+ 	spi-max-frequency = <50000000>;
+ 	spi-chip-selection = <0>;
+ 	read-timing-selection = <1>;

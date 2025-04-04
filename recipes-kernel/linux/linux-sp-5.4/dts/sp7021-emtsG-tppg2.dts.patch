@@ -1,6 +1,6 @@
 --- /dev/null	2025-01-09 22:39:58.819241639 +0300
 +++ a/arch/arm/boot/dts/sp7021-emtsG-tppg2.dts	2025-01-15 01:30:24.549651153 +0300
-@@ -0,0 +1,146 @@
+@@ -0,0 +1,153 @@
 +/*
 + * EMTS for LTPP
 + * Copyright (C) 2025 Tibbo Tech. - http://tibbo.com/tps/
@@ -24,6 +24,13 @@
 +
 + };
 +};
++
++&sp_ehci0 {  status = "disabled";  };
++&sp_ehci1 {  status = "disabled";  };
++&sp_otg0 {  status = "disabled";  };
++&sp_otg1 {  status = "disabled";  };
++&sp_udc0 {  status = "disabled";  };
++&sp_udc1 {  status = "disabled";  };
 +
 +/ {
 +    soc@B {

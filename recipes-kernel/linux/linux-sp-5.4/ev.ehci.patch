@@ -1,0 +1,14 @@
+--- a/arch/arm/boot/dts/sp7021-ev.dts	2025-03-20 00:32:50.015160442 +0300
++++ a/arch/arm/boot/dts/sp7021-ev.dts	2025-03-20 00:53:03.299604024 +0300
+@@ -162,7 +162,11 @@
+ 	pinctrl-0 = <&pins_spinand0>;
+ };
+ 
++&sp_ehci0 {  status = "disabled";  };
++&sp_ehci1 {  status = "disabled";  };
++
+ &sp_spinor0 {
++	status = "disabled";
+ 	spi-max-frequency = <50000000>;
+ 	spi-chip-selection = <0>;
+ 	read-timing-selection = <1>;

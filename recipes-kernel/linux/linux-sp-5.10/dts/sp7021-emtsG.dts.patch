@@ -1,6 +1,6 @@
 --- /dev/null	2025-01-09 22:39:58.819241639 +0300
 +++ a/arch/arm/boot/dts/sp7021-emtsG.dts	2025-01-15 01:20:17.463035366 +0300
-@@ -0,0 +1,211 @@
+@@ -0,0 +1,213 @@
 +/*
 + * EMTS for LTPP
 + * Copyright (C) 2025 Tibbo Tech. - http://tibbo.com/tps/
@@ -11,7 +11,7 @@
 +#include "sp7021-ltpp3g2revD.dtsi"
 +
 +/ {
-+ model = "SP7021 EMTS v0.3";
++ model = "SP7021 EMTS v0.4";
 + clocks {
 +  clk_can0: clk_can0 {
 +    compatible = "fixed-clock";
@@ -24,6 +24,9 @@
 +
 + };
 +};
++
++//&sp_ehci0 {  status = "disabled";  };
++&sp_ehci1 {  status = "disabled";  };
 +
 +&pctl {  interrupts = <>;  };
 +
@@ -66,7 +69,6 @@
 +
 +    };
 +};
-+
 +
 +///* 55 (SPI) on s1 */
 +//&spi_controller0 {  status = "okay";
@@ -126,8 +128,8 @@
 +
 +&pctl {
 +
-+ func_zero: func_zero {
-+   sppctl,zero_func = <
++ /*func_zero: func_zero {
++   sunplus,zero_func = <
 +     MUXF_L2SW_LED_FLASH0
 +     MUXF_L2SW_LED_ON0
 +     MUXF_L2SW_LED_FLASH1
@@ -135,18 +137,18 @@
 +     MUXF_L2SW_P1_MAC_RMII_RXER
 +     GROP_SPI_FLASH
 +   >;
-+ };
++ };*/
 +
 + /* for all eth */
 + ethA_pins: pinmux_ethA_pins {
-+  sppctl,pins = <
++  sunplus,pins = <
 +       SPPCTL_IOPAD(49,SPPCTL_PCTL_G_PMUX,MUXF_L2SW_CLK_OUT,0)
 +       SPPCTL_IOPAD(44,SPPCTL_PCTL_G_PMUX,MUXF_L2SW_MAC_SMI_MDC,0)
 +       SPPCTL_IOPAD(43,SPPCTL_PCTL_G_PMUX,MUXF_L2SW_MAC_SMI_MDIO,0)
 +  >;
 + };
 + eth0_pins: pinmux_eth0_pins {
-+  sppctl,pins = <
++  sunplus,pins = <
 +       SPPCTL_IOPAD(45,SPPCTL_PCTL_G_PMUX,MUXF_L2SW_P0_MAC_RMII_RXER,0)
 +       SPPCTL_IOPAD(52,SPPCTL_PCTL_G_PMUX,MUXF_L2SW_P0_MAC_RMII_TXEN,0)
 +       SPPCTL_IOPAD(50,SPPCTL_PCTL_G_PMUX,MUXF_L2SW_P0_MAC_RMII_TXD0,0)
@@ -159,7 +161,7 @@
 +
 +/* 55 (SPI) on s1 */
 + pins_spim0: pins_spim0 {
-+ sppctl,pins = <
++ sunplus,pins = <
 +      SPPCTL_IOPAD(26,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_EN,0)
 +      SPPCTL_IOPAD(25,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_DI,0)
 +      SPPCTL_IOPAD(23,SPPCTL_PCTL_G_PMUX,MUXF_SPIM0_DO,0)
@@ -167,7 +169,7 @@
 +    >;
 + };
 + pins_spidev0: pins_spidev0 {
-+ sppctl,pins = <
++ sunplus,pins = <
 +      SPPCTL_IOPAD(12,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(13,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(19,SPPCTL_PCTL_G_GPIO,0,0)
@@ -176,7 +178,7 @@
 + };
 +/* 55 (SPI) on s5 */
 + pins_spim1: pins_spim1 {
-+ sppctl,pins = <
++ sunplus,pins = <
 +      SPPCTL_IOPAD(16,SPPCTL_PCTL_G_PMUX,MUXF_SPIM1_EN,0)
 +      SPPCTL_IOPAD(18,SPPCTL_PCTL_G_PMUX,MUXF_SPIM1_DI,0)
 +      SPPCTL_IOPAD(17,SPPCTL_PCTL_G_PMUX,MUXF_SPIM1_DO,0)
@@ -184,7 +186,7 @@
 +    >;
 + };
 + pins_spidev1: pins_spidev1 {
-+ sppctl,pins = <
++ sunplus,pins = <
 +      SPPCTL_IOPAD(20,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(21,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(22,SPPCTL_PCTL_G_GPIO,0,0)
@@ -193,13 +195,13 @@
 + };
 +
 + leds_s0_def: user_leds_s0_def {
-+    sppctl,pins = <
++    sunplus,pins = <
 +      SPPCTL_IOPAD(1,SPPCTL_PCTL_G_GPIO,MUXF_GPIO,SPPCTL_PCTL_L_INV)
 +      SPPCTL_IOPAD(7,SPPCTL_PCTL_G_GPIO,0,SPPCTL_PCTL_L_INV)
 +    >;
 + };
 + leds_s0_slp: user_leds_s0_slp {
-+    sppctl,pins = <
++    sunplus,pins = <
 +      SPPCTL_IOPAD(1,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(7,SPPCTL_PCTL_G_GPIO,0,0)
 +    >;

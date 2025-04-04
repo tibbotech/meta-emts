@@ -11,11 +11,16 @@ SRC_URI:append:tppg2-emts = " file://dts/sp7021-emtsG.dts.patch"
 SRC_URI:append:tppg2 = " file://hid-debug.c.patch"
 SRC_URI:append:tppg2 = " file://input-event-codes.h.patch"
 SRC_URI:append:tppg2 = " file://xpad.c-66.2.patch"
+#SRC_URI:append:tppg2 = " file://xpad.c-66.2n.patch"
 
 KERNEL_DEVICETREE:append:tppg2 = " sp7021-emtsH-tppg2.dtb"
 KERNEL_DEVICETREE:append:tppg2 = " sp7021-emtsG-tppg2.dtb"
 KERNEL_DEVICETREE:append:tppg2-emts = " sp7021-emtsH.dtb"
 KERNEL_DEVICETREE:append:tppg2-emts = " sp7021-emtsG.dtb"
 
-KERNEL_FEATURES:append = " joystick/xpad.scc"
+#KERNEL_FEATURES:append = " joystick/xpad.scc"
+KERNEL_FEATURES:append = " joystick/xone.scc"
 KERNEL_FEATURES:append = " debug_otg.scc"
+
+# tmp
+SRC_URI:append:tppg2 = " file://ev.ehci.patch"
