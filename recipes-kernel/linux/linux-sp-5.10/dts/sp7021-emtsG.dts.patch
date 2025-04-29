@@ -1,6 +1,6 @@
 --- /dev/null	2025-01-09 22:39:58.819241639 +0300
 +++ a/arch/arm/boot/dts/sp7021-emtsG.dts	2025-01-15 01:20:17.463035366 +0300
-@@ -0,0 +1,213 @@
+@@ -0,0 +1,218 @@
 +/*
 + * EMTS for LTPP
 + * Copyright (C) 2025 Tibbo Tech. - http://tibbo.com/tps/
@@ -11,7 +11,7 @@
 +#include "sp7021-ltpp3g2revD.dtsi"
 +
 +/ {
-+ model = "SP7021 EMTS v0.4";
++ model = "SP7021 EMTS v0.5";
 + clocks {
 +  clk_can0: clk_can0 {
 +    compatible = "fixed-clock";
@@ -125,10 +125,15 @@
 +  };
 +};
 +
++/delete-node/ &func_zero;
++/delete-node/ &ethA_pins;
++/delete-node/ &eth0_pins;
++/delete-node/ &leds_s0_def;
++/delete-node/ &leds_s0_slp;
 +
 +&pctl {
 +
-+ /*func_zero: func_zero {
++ func_zero: func_zero {
 +   sunplus,zero_func = <
 +     MUXF_L2SW_LED_FLASH0
 +     MUXF_L2SW_LED_ON0
@@ -137,7 +142,7 @@
 +     MUXF_L2SW_P1_MAC_RMII_RXER
 +     GROP_SPI_FLASH
 +   >;
-+ };*/
++ };
 +
 + /* for all eth */
 + ethA_pins: pinmux_ethA_pins {

@@ -1,6 +1,6 @@
 --- /dev/null	2025-01-09 22:39:58.819241639 +0300
 +++ a/arch/arm/boot/dts/sp7021-emtsG-tppg2.dts	2025-01-15 01:30:24.549651153 +0300
-@@ -0,0 +1,148 @@
+@@ -0,0 +1,156 @@
 +/*
 + * EMTS for LTPP
 + * Copyright (C) 2025 Tibbo Tech. - http://tibbo.com/tps/
@@ -11,7 +11,7 @@
 +#include "sp7021-ltpp3g2revD.dtsi"
 +
 +/ {
-+ model = "SP7021 LTPP EMTS v0.3";
++ model = "SP7021 LTPP EMTS v0.5";
 + clocks {
 +  clk_can0: clk_can0 {
 +    compatible = "fixed-clock";
@@ -24,6 +24,14 @@
 +
 + };
 +};
++
++&sp_ehci0 {  status = "disabled";  };
++&sp_ehci1 {  status = "disabled";  };
++&sp_otg0 {  status = "disabled";  };
++&sp_otg1 {  status = "disabled";  };
++&sp_udc0 {  status = "disabled";  };
++&sp_udc1 {  status = "disabled";  };
++&spinand0 {  status = "disabled";  };
 +
 +&pctl {  interrupts = <>;  };
 +

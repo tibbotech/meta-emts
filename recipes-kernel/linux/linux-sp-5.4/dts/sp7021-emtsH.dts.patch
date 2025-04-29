@@ -11,7 +11,7 @@
 +#include "sp7021-ltpp3g2revD.dtsi"
 +
 +/ {
-+ model = "SP7021 EMTS v0.3";
++ model = "SP7021 EMTS v0.5";
 + clocks {
 +  clk_can0: clk_can0 {
 +    compatible = "fixed-clock";
