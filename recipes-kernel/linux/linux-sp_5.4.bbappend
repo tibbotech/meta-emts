@@ -18,8 +18,8 @@ KERNEL_DEVICETREE:append:tppg2 = " sp7021-emtsG-tppg2.dtb"
 KERNEL_DEVICETREE:append:tppg2-emts = " sp7021-emtsH.dtb"
 KERNEL_DEVICETREE:append:tppg2-emts = " sp7021-emtsG.dtb"
 
-#KERNEL_FEATURES:append = " joystick/xpad.scc"
-KERNEL_FEATURES:append = " joystick/xone.scc"
+KERNEL_FEATURES:append = " joystick/xpad.scc"
+#KERNEL_FEATURES:append = " joystick/xone.scc"
 KERNEL_FEATURES:append = " debug_otg.scc"
 
 # tmp
