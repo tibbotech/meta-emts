@@ -1,0 +1,8 @@
+[Unit]
+Description=Reset USB
+#After=suspend.target
+#After=hibernate.target
+#After=hybrid-sleep.target
+
+[Service]
+ExecStart=/home/root/usb_reset_gpio.sh

@@ -36,8 +36,8 @@ IMAGE_INSTALL += "kernel-modules"
 IMAGE_INSTALL += "devmem2 ethtool mtd-utils mmc-utils"
 IMAGE_INSTALL += "mc strace pstree lsof"
 
-#IMAGE_INSTALL += "kernel-module-xone usbreset"
-IMAGE_INSTALL += "usbreset"
+#IMAGE_INSTALL += "kernel-module-xone"
+IMAGE_INSTALL += "usb-reset-gpio"
 
 # test
 TOOLCHAIN_TARGET_TASK += "kernel-devsrc"
