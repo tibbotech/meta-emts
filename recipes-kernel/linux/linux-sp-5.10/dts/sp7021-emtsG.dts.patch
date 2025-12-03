@@ -25,7 +25,7 @@
 + };
 +};
 +
-+//&sp_ehci0 {  status = "disabled";  };
++&sp_ehci0 {  status = "disabled";  };
 +&sp_ehci1 {  status = "disabled";  };
 +
 +&pctl {  interrupts = <>;  };
@@ -88,13 +88,14 @@
 +    spi-max-frequency = <5000000>;
 +    interrupt-parent = <&intc>;
 +    interrupts = <120 IRQ_TYPE_LEVEL_LOW>;
-+    microchip,rx-int-gpios = <&pctl 13 GPIO_ACTIVE_LOW>;
++    microchip,rx-int-gpios = <&pctl 3 GPIO_ACTIVE_LOW>;
 +    // dv_iocon = <0x80000000>; // use default
 +    dv_iocon = <0x20030300>; // SoF
 +    // dv_oscva = <0x60>; // osc div
 +    dv_oscva = <0x80000000>; // default
 +    // dv_nober; // err counter off
 +    // dv_noslp; // do not sleep
++    filter-ids = <0 0x10B 0x7FF>, <0 0x15B 0x7FF>, <0 0x18B 0x7FF>, <0 0x43B 0x7FF>, <0 0x345 0x7FF>;
 +  };
 +};
 +///* 55 (SPI) on s5 */
@@ -122,6 +123,7 @@
 +     dv_oscva = <0x80000000>; // default
 +    // dv_nober; // err counter off
 +    // dv_noslp; // do not sleep
++    filter-ids = <0 0x10B 0x7FF>, <0 0x15B 0x7FF>, <0 0x18B 0x7FF>, <0 0x43B 0x7FF>, <0 0x345 0x7FF>;
 +  };
 +};
 +
@@ -176,7 +178,7 @@
 + pins_spidev0: pins_spidev0 {
 + sunplus,pins = <
 +      SPPCTL_IOPAD(12,SPPCTL_PCTL_G_GPIO,0,0)
-+      SPPCTL_IOPAD(13,SPPCTL_PCTL_G_GPIO,0,0)
++      SPPCTL_IOPAD(3,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(19,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(22,SPPCTL_PCTL_G_PMUX,MUXF_GPIO_INT0,0)
 +    >;
@@ -193,8 +195,8 @@
 + pins_spidev1: pins_spidev1 {
 + sunplus,pins = <
 +      SPPCTL_IOPAD(20,SPPCTL_PCTL_G_GPIO,0,0)
-+      SPPCTL_IOPAD(21,SPPCTL_PCTL_G_GPIO,0,0)
-+      SPPCTL_IOPAD(22,SPPCTL_PCTL_G_GPIO,0,0)
++      SPPCTL_IOPAD(39,SPPCTL_PCTL_G_GPIO,0,0)
++      SPPCTL_IOPAD(28,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(14,SPPCTL_PCTL_G_PMUX,MUXF_GPIO_INT1,0)
 +    >;
 + };

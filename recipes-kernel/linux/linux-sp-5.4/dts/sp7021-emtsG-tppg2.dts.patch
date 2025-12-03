@@ -1,6 +1,6 @@
 --- /dev/null	2025-01-09 22:39:58.819241639 +0300
 +++ a/arch/arm/boot/dts/sp7021-emtsG-tppg2.dts	2025-01-15 01:30:24.549651153 +0300
-@@ -0,0 +1,153 @@
+@@ -0,0 +1,154 @@
 +/*
 + * EMTS for LTPP
 + * Copyright (C) 2025 Tibbo Tech. - http://tibbo.com/tps/
@@ -79,6 +79,7 @@
 +    dv_oscva = <0x80000000>; // default
 +    // dv_nober; // err counter off
 +    // dv_noslp; // do not sleep
++    filter-ids = <0 0x501 0x7FF>, <0 0x503 0x7FF>;
 +  };
 +};
 +
@@ -125,8 +126,8 @@
 + sppctl,pins = <
 +      SPPCTL_IOPAD(12,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(13,SPPCTL_PCTL_G_GPIO,0,0)
-+      SPPCTL_IOPAD(19,SPPCTL_PCTL_G_GPIO,0,0)
-+      SPPCTL_IOPAD(22,SPPCTL_PCTL_G_PMUX,MUXF_GPIO_INT0,0)
++      SPPCTL_IOPAD(14,SPPCTL_PCTL_G_GPIO,0,0)
++      SPPCTL_IOPAD(15,SPPCTL_PCTL_G_PMUX,MUXF_GPIO_INT0,0)
 +    >;
 + };
 +/* 55 (SPI) on s5 */
@@ -143,7 +144,7 @@
 +      SPPCTL_IOPAD(20,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(21,SPPCTL_PCTL_G_GPIO,0,0)
 +      SPPCTL_IOPAD(22,SPPCTL_PCTL_G_GPIO,0,0)
-+      SPPCTL_IOPAD(14,SPPCTL_PCTL_G_PMUX,MUXF_GPIO_INT1,0)
++      SPPCTL_IOPAD(23,SPPCTL_PCTL_G_PMUX,MUXF_GPIO_INT1,0)
 +    >;
 + };
 +
