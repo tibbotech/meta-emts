@@ -1,6 +1,6 @@
 --- /dev/null	2025-01-09 22:39:58.819241639 +0300
 +++ a/arch/arm/boot/dts/sp7021-emtsG.dts	2025-01-15 01:20:17.463035366 +0300
-@@ -0,0 +1,218 @@
+@@ -0,0 +1,223 @@
 +/*
 + * EMTS for LTPP
 + * Copyright (C) 2025 Tibbo Tech. - http://tibbo.com/tps/
@@ -28,6 +28,9 @@
 +&sp_ehci0 {  status = "disabled";  };
 +&sp_ehci1 {  status = "disabled";  };
 +
++&spinand0 {  status = "disabled";  };
++&sp_spinor0 {  status = "disabled";  };
++
 +&pctl {  interrupts = <>;  };
 +
 +&buzzer0 {  status = "disabled";  };
@@ -43,7 +46,7 @@
 +/delete-node/ &eth_phy1;
 +
 +/ {
-+    soc@B {
++    soc-B {
 +
 +	mdio {
 +	    eth_phy0: ethernet-phy@1 {  reg = <1>;  };
@@ -217,7 +220,7 @@
 +};
 +
 +/ {
-+    soc@B {
++    soc-B {
 +
 +    };
 +};

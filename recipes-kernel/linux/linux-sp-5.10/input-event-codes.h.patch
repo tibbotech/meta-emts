@@ -1,0 +1,10 @@
+--- a/include/uapi/linux/input-event-codes.h	2026-01-08 18:40:54.808177596 +0300
++++ a/include/uapi/linux/input-event-codes.h	2026-01-09 19:58:27.806577995 +0300
+@@ -841,6 +841,7 @@
+ #define ABS_TOOL_WIDTH		0x1c
+ 
+ #define ABS_VOLUME		0x20
++#define ABS_PROFILE		0x21
+ 
+ #define ABS_MISC		0x28
+ 

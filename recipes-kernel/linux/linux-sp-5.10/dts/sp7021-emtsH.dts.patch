@@ -43,7 +43,7 @@
 +/delete-node/ &eth_phy1;
 +
 +/ {
-+    soc@B {
++    soc-B {
 +
 +	mdio {
 +	    eth_phy0: ethernet-phy@1 {  reg = <1>;  };
@@ -196,7 +196,7 @@
 +};
 +
 +/ {
-+    soc@B {
++    soc-B {
 +
 +    };
 +};
