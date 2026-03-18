@@ -37,6 +37,8 @@ IMAGE_INSTALL += "devmem2 ethtool mtd-utils mmc-utils"
 IMAGE_INSTALL += "mc strace pstree lsof"
 
 IMAGE_INSTALL += "usb-reset-gpio"
+IMAGE_INSTALL += "kernel-mod-fintek"
+IMAGE_INSTALL += "iproute2-tc"
 
 # test
 TOOLCHAIN_TARGET_TASK += "kernel-devsrc"

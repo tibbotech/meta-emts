@@ -1,6 +1,6 @@
 --- /dev/null	2025-01-09 22:39:58.819241639 +0300
 +++ a/arch/arm/boot/dts/sp7021-emtsG.dts	2025-01-15 01:20:17.463035366 +0300
-@@ -0,0 +1,213 @@
+@@ -0,0 +1,217 @@
 +/*
 + * EMTS for LTPP
 + * Copyright (C) 2025 Tibbo Tech. - http://tibbo.com/tps/
@@ -94,6 +94,8 @@
 +    // dv_nober; // err counter off
 +    // dv_noslp; // do not sleep
 +    filter-ids = <0 0x10B 0x7FF>, <0 0x15B 0x7FF>, <0 0x18B 0x7FF>, <0 0x43B 0x7FF>, <0 0x345 0x7FF>;
++    fifo-rx-n = <16>;
++    fifo-tx-n = <2>;
 +  };
 +};
 +///* 55 (SPI) on s5 */
@@ -122,6 +124,8 @@
 +    // dv_nober; // err counter off
 +    // dv_noslp; // do not sleep
 +    filter-ids = <0 0x10B 0x7FF>, <0 0x15B 0x7FF>, <0 0x18B 0x7FF>, <0 0x43B 0x7FF>, <0 0x345 0x7FF>;
++    fifo-rx-n = <16>;
++    fifo-tx-n = <2>;
 +  };
 +};
 +
