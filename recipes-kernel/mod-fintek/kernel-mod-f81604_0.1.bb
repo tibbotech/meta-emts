@@ -1,4 +1,4 @@
-DESCRIPTION = "Fintek FB1604 USB-to-CANBUS module"
+DESCRIPTION = "Fintek F81604 USB-to-CANBUS module"
 MAINTAINER = "Dvorkin Dmitry <dvorkin@tibbo.com>"
 SECTION = "kernel/modules"
 PRIORITY = "optional"
@@ -8,8 +8,6 @@ PR = "r1"
 PACKAGES =+ "${PN}-includes"
 PACKAGE_ARCH:${PN}-includes = "all"
 
-# src in /files/kernel-mod-fintek/*
-#S = "${WORKDIR}/${PN}"
 S = "${WORKDIR}"
 
 inherit module
