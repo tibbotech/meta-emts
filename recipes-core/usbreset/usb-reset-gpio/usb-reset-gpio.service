@@ -6,3 +6,6 @@ Description=Reset USB
 
 [Service]
 ExecStart=/home/root/usb_reset_gpio.sh
+
+[Install]
+WantedBy=multi-user.target
